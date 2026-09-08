@@ -1,0 +1,16 @@
+Frontend: 
+I have spent my recent time building a solid baseline in frontend engineering, mastering JavaScript, TypeScript, Next.js, and React.js. By building personal projects, I learned to turn Figma designs into responsive user interfaces, use Tailwind CSS for layout, and consume RESTful APIs seamlessly. I am looking for my first full-time role as a Frontend Developer at , where I can quickly adapt to your development workflow and build clean, accessible components. 
+
+Full Stack:
+I have spent my recent time building a solid baseline across the web ecosystem, mastering TypeScript, JavaScript, Next.js, Express.js/Node.js, and SQL-NoSQL databases. By building personal projects, I learned to seamlessly connect clean RESTful APIs with responsive user interfaces while managing schemas through Prisma-Postgresql. I am looking for my first full-time role as a Software Engineer (Intern) at Cahless Ai, where I can quickly adapt to your tech stack and write dependable code. 
+
+Backend: 
+I have spent my recent time building a solid baseline in backend engineering, mastering TypeScript, Node.js, Express, and PostgreSQL. By building personal projects, I learned to design database schemas with Prisma, implement JWT authentication, and develop optimized RESTful APIs. I am looking for my first full-time role as a [Job Title] at [Company Name], where I can quickly adapt to your architecture and write dependable server-side code. 
+
+cm-frontend:
+I have spent my recent time building a solid baseline in frontend engineering, mastering JavaScript, TypeScript, Next.js, and React.js. By building personal projects, I learned to turn Figma designs into responsive user interfaces, use Tailwind CSS for layout, and consume RESTful APIs seamlessly. I am looking for a full-time software engineering role where I can quickly adapt to an engineering workflow and build clean, accessible components. 
+cm-backend: 
+I have spent my recent time building a solid baseline in backend engineering, mastering TypeScript, Node.js, Express, and PostgreSQL. By building personal projects, I learned to design database schemas with Prisma, implement JWT authentication, and develop optimized RESTful APIs. I am looking for a full-time software engineering role where I can quickly adapt to an existing architecture and write dependable server-side code. 
+cm-full stack:
+I have spent my recent time building a solid baseline across the web ecosystem, mastering TypeScript, Next.js, Node.js, and databases. By building personal projects, I learned to seamlessly connect clean RESTful APIs with responsive user interfaces while managing schemas through Prisma. I am looking for a full-time software engineering role where I can quickly adapt to a team's tech stack and write dependable code across the stack.
+
