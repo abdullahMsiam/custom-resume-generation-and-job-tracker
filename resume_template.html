@@ -2,321 +2,514 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Resume Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Abdullah Muhammad Siam - Junior Full Stack Developer Resume">
+    <title>Abdullah Muhammad Siam - Resume</title>
+
     <style>
-        /* Rockwell Font (Google Fonts serif fallback for ATS compatibility) */
-       @import url('https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+        /*
+         * Resume design goals:
+         * - ATS-friendly: normal HTML text, semantic headings, no tables/columns for layout
+         * - Attractive first look: restrained navy accent, clear hierarchy, strong whitespace
+         * - A4 print/PDF optimized
+         * - Dynamic fields preserved: {{ job_position }} and {{ career_objective }}
+         */
 
         @page {
             size: A4;
-            /* Top/Bottom ছোট মার্জিন এবং Left/Right একটু ভিন্ন মার্জিন */
-            margin-top: 18pt;
-            margin-bottom: 0pt;
-            margin-left: 28pt;
-            margin-right: 28pt;
+            margin: 15mm 16mm 13mm;
+        }
+
+        :root {
+            --accent: #174a7e;
+            --accent-dark: #123b64;
+            --text: #161616;
+            --muted: #4b5563;
+            --rule: #9aa9b8;
+            --soft-rule: #d8dee5;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 10pt;
         }
 
         body {
-            font-family: 'Georgia', Times, serif;
-            font-size: 10pt;
-            line-height: 1.35;
-            text-align: justify;
-            color: #000000;
-            background-color: #ffffff;
             margin: 0;
             padding: 0;
+            background: #ffffff;
+            color: var(--text);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 10pt;
+            line-height: 1.34;
         }
 
-        /* Header Section */
+        .resume {
+            width: 100%;
+            max-width: 780px;
+            margin: 0 auto;
+        }
+
+        /* =========================
+           HEADER
+           ========================= */
+
         .header {
             text-align: center;
-            margin-bottom: 0px;
-            line-height: 1.0;
+            margin-bottom: 7px;
         }
 
         .name {
-            font-size: 21pt;
-            font-weight: 900;
-            letter-spacing: 0.3px;
-            margin-bottom: -3px;
-            text-transform: none;
+            margin: 0;
+            color: #111827;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 22pt;
+            line-height: 1.05;
+            font-weight: 700;
+            letter-spacing: 0.1px;
         }
 
         .position {
-            font-size: 20pt;
-            font-weight: 900;
-            font-variant: small-caps;
-            letter-spacing: 0.3px;
-            margin-bottom: 0px;
-        }
-
-        .email {
-            font-size: 10.5pt;
-            font-weight: 900;
-            margin-bottom: 0px;
-        }
-
-        .social-links {
             margin-top: 2px;
-            font-size: 10.5pt;
-            font-weight: 900;
+            color: var(--accent);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 11.2pt;
+            line-height: 1.15;
+            font-weight: 700;
+            letter-spacing: 0.7px;
+            text-transform: uppercase;
         }
 
-        /* Hyperlink styling - Blue and Underlined */
-        a {
-            color: #1b66c9;
+        .contact-row {
+            margin-top: 5px;
+            color: #30343a;
+            font-size: 9.4pt;
+            line-height: 1.3;
+        }
+
+        .contact-row a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .contact-row a:hover,
+        .project-links a:hover {
             text-decoration: underline;
-            font-weight: 800;
         }
 
-        /* Section Title with Small-Caps and side dividers */
-        .section-title {
+        .separator {
+            color: #9aa0a6;
+            padding: 0 5px;
+        }
+
+        .header-rule {
+            height: 2px;
+            margin-top: 8px;
+            background: var(--accent);
+        }
+
+        /* =========================
+           SECTION HEADINGS
+           ========================= */
+
+        section {
+            margin-top: 6px;
+        }
+
+        .section-heading {
             display: flex;
             align-items: center;
-            text-align: center;
-            color: #1b66c9;
-            font-size: 13pt;
+            gap: 8px;
+            margin: 0 0 3px;
+            color: var(--accent-dark);
+            font-size: 10.7pt;
+            line-height: 1.15;
             font-weight: 800;
-            font-variant: small-caps;
-            margin-top: 4px;
-            margin-bottom: 1px;
+            letter-spacing: 0.7px;
+            text-transform: uppercase;
         }
 
-        .section-title::before,
-        .section-title::after {
-            content: '';
+        .section-heading::after {
+            content: "";
             flex: 1;
-            border-bottom: 1px solid #1b66c9;
+            border-bottom: 1px solid var(--rule);
+            transform: translateY(1px);
         }
 
-        .section-title::before {
-            margin-right: 6px;
+        .section-heading span {
+            white-space: nowrap;
         }
 
-        .section-title::after {
-            margin-left: 6px;
-        }
+        /* =========================
+           CAREER OBJECTIVE
+           ========================= */
 
-        /* Technical Skills List */
-        .skills-list {
-            list-style-type: disc;
+        .summary {
             margin: 0;
-            padding-left: 18px;
+            text-align: left;
+            line-height: 1.38;
         }
 
-        .skills-list li {
-            margin-bottom: 2px;
+        /* =========================
+           SKILLS
+           ========================= */
+
+        .skills {
+            margin: 0;
+            padding-left: 16px;
         }
 
-        .bold-text {
-            font-weight: 800;
+        .skills li {
+            margin: 0 0 2px;
+            padding-left: 1px;
         }
 
-        /* Projects Section */
-        .project-item {
-            margin-bottom: 6px;
+        .label {
+            font-weight: 700;
+            color: #1b1f24;
+        }
+
+        /* =========================
+           PROJECTS
+           ========================= */
+
+        .project {
+            margin: 0 0 6px;
+            break-inside: avoid;
+            page-break-inside: avoid;
+        }
+
+        .project:last-child {
+            margin-bottom: 0;
         }
 
         .project-header {
-            font-size: 11.5pt;
-            font-weight: 800;
+            margin: 0;
+            font-size: 10.5pt;
+            line-height: 1.25;
+            font-weight: 700;
         }
 
-        .project-desc {
-            margin-top: 1px;
-            margin-bottom: 2px;
+        .project-number {
+            color: var(--accent);
+        }
+
+        .project-title {
+            color: #111827;
+        }
+
+        .project-links {
+            font-size: 8.9pt;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .project-links a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .project-description {
+            margin: 1px 0 2px;
+            color: #30343a;
+            line-height: 1.3;
         }
 
         .project-points {
             margin: 0;
-            padding-left: 18px;
-            list-style-type: decimal;
+            padding-left: 17px;
         }
 
         .project-points li {
-            margin-bottom: 2px;
-            color: #1b66c9; /* Numbering blue based on image */
-            font-weight: 800;
+            margin: 0 0 1.5px;
+            padding-left: 1px;
+            line-height: 1.3;
         }
 
-        .project-points li span {
-            color: #000000; /* Inside text normal black */
-            font-weight: normal;
+        .point-label {
+            font-weight: 700;
         }
 
-        .stack-line {
-            
-            margin-top: 2px;
-            font-size: 9.5pt;
+        .stack {
+            margin-top: 1px;
+            margin-bottom: 1px;
+            color: #252a30;
+            font-size: 9.2pt;
+            line-height: 1.25;
         }
 
-        .stack-label {
-            color: #1b66c9;
+        .stack .label {
+            color: var(--accent);
             font-weight: 800;
         }
 
         .stack-items {
-            font-weight: 800;
-            color: #000000;
+            font-weight: 700;
         }
 
-        /* Qualifications Section */
-        .qual-list {
-            font-weight: 800;
+        /* =========================
+           EDUCATION / TRAINING
+           ========================= */
+
+        .education-list {
             margin: 0;
             padding-left: 18px;
-            list-style-type: decimal;
         }
 
-        .qual-list li {
+        .education-list li {
             margin-bottom: 3px;
-            color: #1b66c9;
-            font-weight: 800;
+            padding-left: 1px;
         }
 
-        .qual-list li span {
-            color: #000000;
-            font-weight: normal;
+        .education-title {
+            font-weight: 700;
         }
 
-        .qual-title {
-            font-weight: 800;
+        .education-org {
+            color: #30343a;
         }
 
-        /* Languages Section */
-        .lang-item {
-            margin-bottom: 1px;
+        /* =========================
+           LANGUAGES
+           ========================= */
+
+        .languages {
+            display: flex;
+            gap: 28px;
+            margin: 0;
+        }
+
+        .language-item {
+            margin: 0;
+        }
+
+        /* =========================
+           PRINT / PDF
+           ========================= */
+
+        @media print {
+            body {
+                font-size: 9.8pt;
+            }
+
+            .resume {
+                max-width: none;
+            }
+
+            a {
+                color: inherit;
+                text-decoration: none;
+            }
+
+            .project,
+            section {
+                break-inside: avoid;
+            }
+        }
+
+        @media screen and (max-width: 700px) {
+            body {
+                padding: 18px;
+            }
+
+            .name {
+                font-size: 20pt;
+            }
+
+            .contact-row {
+                line-height: 1.6;
+            }
+
+            .languages {
+                display: block;
+            }
+
+            .language-item {
+                margin-bottom: 2px;
+            }
         }
     </style>
 </head>
-<body>
 
-    <!-- Header Section -->
-    <div class="header">
-        <div class="name">Abdullah Muhammad Siam</div>
+<body>
+<main class="resume">
+
+    <!-- =========================
+         HEADER
+         ========================= -->
+    <header class="header">
+        <h1 class="name">Abdullah Muhammad Siam</h1>
+
         <!-- Dynamic Position -->
         <div class="position">{{ job_position }}</div>
-        <div class="email">abdullah.siam.chat@gmail.com</div>
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/abdullah-muhammad-siam">LinkedIn</a> &nbsp;|&nbsp; 
-            <a href="https://github.com/abdullahMsiam">GitHub</a> &nbsp;|&nbsp; 
-            <a href="https://ams-porfolio.vercel.app/">Portfolio</a> &nbsp;|&nbsp; 
-            <span style="color: #1b66c9;">+8801637271447</span>
-        </div>
-    </div>
 
-    <!-- Career Objective Section -->
-    <div class="section-title">Career Objective</div>
-    <div>
+        <div class="contact-row">
+            <span>abdullah.siam.chat@gmail.com</span>
+            <span class="separator">|</span>
+            <a href="https://www.linkedin.com/in/abdullah-muhammad-siam">LinkedIn</a>
+            <span class="separator">|</span>
+            <a href="https://github.com/abdullahMsiam">GitHub</a>
+            <span class="separator">|</span>
+            <a href="https://ams-porfolio.vercel.app/">Portfolio</a>
+            <span class="separator">|</span>
+            <span>+8801637271447</span>
+        </div>
+
+        <div class="header-rule"></div>
+    </header>
+
+    <!-- =========================
+         SUMMARY
+         ========================= -->
+    <section>
+        <h2 class="section-heading"><span>Career Objective</span></h2>
+
         <!-- Dynamic Career Objective -->
-        {{ career_objective }}
-    </div>
+        <p class="summary">{{ career_objective }}</p>
+    </section>
 
-    <!-- Technical Skills Section -->
-    <div class="section-title">Technical Skills</div>
-    <ul class="skills-list">
-        <li><span class="bold-text">Languages:</span> JavaScript (ES6+), TypeScript, SQL</li>
-        <li><span class="bold-text">Frontend:</span> NextJS, React.js, React Router, HTML5, CSS3, Tailwind CSS, Bootstrap, Shadcn UI</li>
-        <li><span class="bold-text">Backend:</span> Node.js, Express.js, REST API, JWT Authentication, MongoDB, PostgreSQL, Prisma</li>
-        <li><span class="bold-text">Tools:</span> GitHub, Figma, Vercel</li>
-        <li><span class="bold-text">Exploring:</span> React Native, Redux, TanStack Query, Material-UI</li>
-    </ul>
+    <!-- =========================
+         TECHNICAL SKILLS
+         ========================= -->
+    <section>
+        <h2 class="section-heading"><span>Technical Skills</span></h2>
 
-    <!-- Projects Section -->
-    <div class="section-title">Projects</div>
+        <ul class="skills">
+            <li><span class="label">Languages:</span> JavaScript (ES6+), TypeScript, SQL</li>
+            <li><span class="label">Frontend:</span> Next.js, React.js, React Router, HTML5, CSS3, Tailwind CSS, Bootstrap, Shadcn UI</li>
+            <li><span class="label">Backend:</span> Node.js, Express.js, REST APIs, JWT Authentication</li>
+            <li><span class="label">Database:</span> PostgreSQL, MongoDB, Prisma</li>
+            <li><span class="label">Tools:</span> Git, GitHub, Figma, Vercel</li>
+        </ul>
+    </section>
 
-    <!-- Project 1 -->
-    <div class="project-item">
-        <div class="project-header">
-            1. YourRENT (Property Rental Platform): 
-            <a href="https://your-rent.vercel.app">Live-Link</a> | 
-            <a href="https://github.com/abdullahMsiam/your-rent-bk">Backend-Code</a> | 
-            <a href="https://github.com/abdullahMsiam/your-rent-frontend">Frontend-Code</a>
-        </div>
-        <div class="project-desc">
-            A full-stack rental management system with secure authentication, property filtering, and serverless optimization.
-        </div>
-        <ol class="project-points">
-            <li><span><span class="bold-text"> Core Features:</span> Built JWT authentication with role-based access, interactive property search/filtering, and dynamic booking management.</span></li>
-            <li><span><span class="bold-text"> Challenges & Fixes:</span> Resolved Vercel serverless CORS preflight restrictions and optimized API request latency with token validation checks.</span></li>
-            <li><span><span class="bold-text"> UI & Performance:</span> Designed a mobile-responsive interface using NextJS and Tailwind CSS featuring custom pagination and state management.</span></li>
+    <!-- =========================
+         PROJECTS
+         ========================= -->
+    <section>
+        <h2 class="section-heading"><span>Projects</span></h2>
+
+        <article class="project">
+            <div class="project-header">
+                <span class="project-number">1.</span>
+                <span class="project-title"> YourRENT (Property Rental Platform)</span>
+                <span class="project-links">
+                    — <a href="https://your-rent.vercel.app">Live Demo</a> |
+                    <a href="https://github.com/abdullahMsiam/your-rent-bk">Backend Code</a> |
+                    <a href="https://github.com/abdullahMsiam/your-rent-frontend">Frontend Code</a>
+                </span>
+            </div>
+
+            <div class="stack">
+                <span class="label">Tech:</span>
+                <span class="stack-items">Next.js · Express.js · PostgreSQL · Prisma · TypeScript · JWT · Tailwind CSS</span>
+            </div>
+
+            <p class="project-description">
+                A full-stack rental management system with secure authentication, property filtering, booking management, and responsive UI.
+            </p>
+
+            <ul class="project-points">
+                <li>Implemented JWT authentication with role-based access, property search/filtering, and dynamic booking management.</li>
+                <li>Resolved Vercel serverless CORS preflight issues and improved API request handling with token validation checks.</li>
+                <li>Designed a mobile-responsive interface with custom pagination and state management using Next.js and Tailwind CSS.</li>
+            </ul>
+        </article>
+
+        <article class="project">
+            <div class="project-header">
+                <span class="project-number">2.</span>
+                <span class="project-title"> MASIO (Apps Store)</span>
+                <span class="project-links">
+                    — <a href="https://mas-io-client.vercel.app">Live Demo</a> |
+                    <a href="https://github.com/abdullahMsiam/mas-io-client">Frontend Code</a>
+                </span>
+            </div>
+
+            <div class="stack">
+                <span class="label">Tech:</span>
+                <span class="stack-items">React.js · Tailwind CSS · React Router · Recharts · React Toastify</span>
+            </div>
+
+            <p class="project-description">
+                A responsive React.js application for discovering trending apps and experiencing a simulated installation workflow.
+            </p>
+
+            <ul class="project-points">
+                <li>Built reusable React components and dynamically rendered app data for responsive application pages.</li>
+                <li>Implemented app discovery features with ratings/downloads and a simulated installation process.</li>
+                <li>Simplified app discovery and the installation journey in a single responsive interface.</li>
+            </ul>
+        </article>
+
+        <article class="project">
+            <div class="project-header">
+                <span class="project-number">3.</span>
+                <span class="project-title"> Master Chefs (Recipe &amp; Chef Site)</span>
+                <span class="project-links">
+                    — <a href="https://chef-master-e0b16.web.app">Live Demo</a> |
+                    <a href="https://github.com/abdullahMsiam/chef-master-server">Backend Code</a> |
+                    <a href="https://github.com/abdullahMsiam/chef-master">Frontend Code</a>
+                </span>
+            </div>
+
+            <div class="stack">
+                <span class="label">Tech:</span>
+                <span class="stack-items">React.js · Bootstrap CSS · Express.js · React Router · JWT · MongoDB</span>
+            </div>
+
+            <p class="project-description">
+                A full-stack recipe and chef platform with authentication, protected routes, CRUD operations, and responsive design.
+            </p>
+
+            <ul class="project-points">
+                <li>Implemented user registration, login, and data ownership so each user manages only their own data.</li>
+                <li>Restricted recipe and chef sections to authenticated users through protected routes and JWT authentication.</li>
+                <li>Designed a clean, mobile-responsive UI using Bootstrap 5.</li>
+            </ul>
+        </article>
+    </section>
+
+    <!-- =========================
+         EDUCATION & TRAINING
+         ========================= -->
+    <section>
+        <h2 class="section-heading"><span>Education &amp; Training</span></h2>
+
+        <ol class="education-list">
+            <li>
+                <span class="education-title">B.Sc. (Engg.) in Computer Science and Engineering</span><br>
+                <span class="education-org">Mawlana Bhashani Science and Technology University, Tangail</span>
+            </li>
+
+            <li>
+                <span class="education-title">Next Level AI-Driven Software Engineering Bootcamp (L-2)</span><br>
+                <span class="education-org">Programming Hero</span>
+            </li>
+
+            <li>
+                <span class="education-title">Complete Web Development (L-1)</span><br>
+                <span class="education-org">Programming Hero</span>
+            </li>
         </ol>
-        <div class="stack-line">
-            <span class="stack-label">Stack:</span> 
-            <span class="stack-items">NextJS · ExpressJS · TailwindCSS · Postgresql · Prisma · Typescript · JWT</span>
-        </div>
-    </div>
+    </section>
 
-    <!-- Project 2 -->
-    <div class="project-item">
-        <div class="project-header">
-            2. MASIO (Apps Store): 
-            <a href="https://mas-io-client.vercel.app">Live-Link</a> | 
-            <a href="https://github.com/abdullahMsiam/mas-io-client">Frontend-Code</a>
-        </div>
-        <div class="project-desc">
-            A responsive React.js application for discovering trending apps and experiencing a simulated installation workflow.
-        </div>
-        <ol class="project-points">
-            <li><span><span class="bold-text"> Feature:</span> Browse trending apps with ratings/downloads and follow a demo installation process.</span></li>
-            <li><span><span class="bold-text"> Challenge:</span> Built reusable React components and dynamically rendered app data to reduce repetitive UI and maintain responsive layouts.</span></li>
-            <li><span><span class="bold-text"> Goal:</span> Simplify app discovery and demonstrate the installation journey in one interface.</span></li>
-        </ol>
-        <div class="stack-line">
-            <span class="stack-label">Stack:</span> 
-            <span class="stack-items">ReactJS · Tailwind CSS · React Router · Recharts · React Tostify</span>
-        </div>
-    </div>
+    <!-- =========================
+         LANGUAGES
+         ========================= -->
+    <section>
+        <h2 class="section-heading"><span>Languages</span></h2>
 
-    <!-- Project 3 -->
-    <div class="project-item">
-        <div class="project-header">
-            3. Master Chefs (A recipe & Chef site): 
-            <a href="https://chef-master-e0b16.web.app">Live-Link</a> | 
-            <a href="https://github.com/abdullahMsiam/chef-master-server">Backend-Code</a> | 
-            <a href="https://github.com/abdullahMsiam/chef-master">Frontend-Code</a>
-        </div> 
-        <div class="project-desc">
-            A full-featured web-based task management system demonstrating core MERN development skills with authentication, CRUD operations, and responsive design.
+        <div class="languages">
+            <div class="language-item"><span class="label">English:</span> Professional Working Proficiency</div>
+            <div class="language-item"><span class="label">Bangla:</span> Native</div>
         </div>
-        <ol class="project-points">
-            <li><span><span class="bold-text"> Feature:</span> Implemented user registration, login, and session-based task ownership so each user manages only their own data.</span></li>
-            <li><span> Only a logged in user can access specific section like recipe of a chef.</span></li>
-            <li><span> Designed a clean, mobile-responsive UI using Bootstrap 5; secured routes with JWT authentication</span></li>
-        </ol>
-        <div class="stack-line">
-            <span class="stack-label">Stack:</span> 
-            <span class="stack-items">ReactJS · Bootstrap CSS · ExpressJS · React Router · JWT · MongoDB</span>
-        </div>
-    </div>
+    </section>
 
-    <!-- Qualifications Section -->
-    <div class="section-title">Qualifications</div>
-    <ol class="qual-list">
-        <li>
-            <span>
-                <span class="qual-title text-bold">B. Sc (Engg.) in Computer Science and Engineering</span><br>
-                - Mawlana Bhashani Science and Technology University, Tangail
-            </span>
-        </li>
-        <li>
-            <span>
-                <span class="qual-title text-bold">Next Level AI-Driven Software Engineering Bootcamp(L-2)</span><br>
-                - Programming Hero
-            </span>
-        </li>
-        <li>
-            <span>
-                <span class="qual-title text-bold">Complete Web Development(L-1)</span><br>
-                - Programming Hero
-            </span>
-        </li>
-    </ol>
-
-    <!-- Languages Section -->
-    <div class="section-title">Languages</div>
-    <div class="lang-item"><span class="bold-text">English:</span> Professional Working Proficiency</div>
-    <div class="lang-item"><span class="bold-text">Bangla:</span> Native</div>
-
+</main>
 </body>
 </html>
