@@ -45,7 +45,7 @@
         padding: 0;
         background: #ffffff;
         color: var(--text);
-        font-family: Arial, Helvetica, sans-serif;
+        font-family:  'Calibri', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
         font-size: 10.5pt;
         line-height: 1.34;
         text-align: justify;
@@ -68,7 +68,7 @@
 
       .name {
         margin: 0;
-        color: #111827;
+        color: #000000;
         font-family: Arial, Helvetica, sans-serif;
         font-size: 16pt;
         line-height: 1.05;
@@ -80,7 +80,7 @@
         margin-top: 2px;
         color: var(--accent);
         font-family: Arial, Helvetica, sans-serif;
-        font-size: 14pt;
+        font-size: 13pt;
         line-height: 1.15;
         font-weight: 700;
         letter-spacing: 0.7px;
@@ -88,10 +88,12 @@
       }
 
       .contact-row {
-        margin-top: 5px;
-        color: #30343a;
+        margin-top: 1px;
+        color: #000000;
         font-size: 10pt;
         line-height: 1.3;
+        white-space: nowrap;
+        
       }
 
       .contact-row a {
@@ -112,7 +114,7 @@
 
       .header-rule {
         height: 2px;
-        margin-top: 8px;
+        margin-top: 3px;
         background: var(--accent);
       }
 
@@ -121,7 +123,7 @@
            ========================= */
 
       section {
-        margin-top: 6px;
+        margin-top: 8px;
       }
 
       .section-heading {
@@ -155,7 +157,7 @@
       .summary {
         margin: 0;
         text-align: justify;
-        line-height: 1.38;
+        line-height: 1.34;
       }
 
       /* =========================
@@ -174,7 +176,7 @@
 
       .label {
         font-weight: 700;
-        color: #1b1f24;
+        color: #000000;
       }
 
       /* =========================
@@ -182,7 +184,7 @@
            ========================= */
 
       .project {
-        margin: 0 0 6px;
+        margin-top: 6px; 
         break-inside: avoid;
         page-break-inside: avoid;
       }
@@ -193,7 +195,7 @@
 
       .project-header {
         margin: 0;
-        font-size: 10.5pt;
+        font-size: 11pt;
         line-height: 1.25;
         font-weight: 700;
       }
@@ -203,13 +205,13 @@
       }
 
       .project-title {
-        color: #111827;
+        color: #000000;
       }
 
       .project-links {
-        font-size: 8.9pt;
+        font-size: 9.5pt;
         font-weight: 700;
-        white-space: nowrap;
+        text-align: right;
       }
 
       .project-links a {
@@ -219,7 +221,7 @@
 
       .project-description {
         margin: 1px 0 2px;
-        color: #30343a;
+        color: #000000;
         line-height: 1.3;
       }
 
@@ -239,9 +241,9 @@
       }
 
       .stack {
-        margin-top: 1px;
+        margin-top: 3px;
         margin-bottom: 1px;
-        color: #252a30;
+        color: #000000;
         font-size: 9.2pt;
         line-height: 1.25;
       }
@@ -276,6 +278,7 @@
       .education-org {
         color: #30343a;
       }
+      
 
       /* =========================
            LANGUAGES
@@ -339,33 +342,36 @@
 
         <!-- Dynamic Position -->
         <div class="position">{{ job_position }}</div>
-        <div class="contact-row" style="margin-top: 0px">
+        <div style="font-size: 10pt; margin-top: 1px"; font-weight: 900; color: #000000>
+          <span> Tangail, Bangladesh </span>
+        </div>
+        <div class="contact-row">
+          <span>
+            <span style="font-weight: 700; color: #000000">Email: </span
+            >abdullah.siam.chat@gmail.com
+          </span>
+          <span class="separator">|</span>
+          <span>
+            <span style="font-weight: 700; color: #000000">Contact:</span>
+            +8801637271447 (WhatsApp)
+          </span>
+        </div>
+        <div class="contact-row">
+          <a href="https://github.com/abdullahMsiam"
+            ><span style="font-weight: 700; color: #000000">GitHub:</span>
+            github.com/abdullahMsiam
+          </a>
+          <span class="separator">|</span>
           <a href="https://www.linkedin.com/in/abdullahmsiam/"
             ><span style="font-weight: 700; color: #000000">LinkedIn:</span>
             linkedin.com/in/abdullahmsiam
           </a>
+          <span class="separator">|</span>
+          <a href="https://ams-porfolio.vercel.app/"
+            ><span style="font-weight: 700; color: #000000">Portfolio:</span>
+            ams-porfolio.vercel.app</a
+          >
         </div>
-        <div class="contact-row" style="margin-top: 0px; display:grid; grid-template-columns: repeat(3, 1fr); grid-template-columns: min-content max-content auto ; gap:0 2px; align-items:start;  ">
-            <a href="https://github.com/abdullahMsiam"
-              ><span style="font-weight: 700; color: #000000">GitHub:</span>
-              github.com/abdullahMsiam 
-            </a>
-            <span class="separator">|</span>
-            <a href="https://ams-porfolio.vercel.app/"
-              ><span style="font-weight: 700; color: #000000">Portfolio:</span>
-              ams-porfolio.vercel.app</a
-            >
-            <span>
-              <span style="font-weight: 700; color: #000000">Email:</span
-              >abdullah.siam.chat@gmail.com 
-            </span>
-            <span class="separator">|</span>
-            <span>
-              <span style="font-weight: 700; color: #000000">Contact:</span>
-              +8801637271447</span
-            >
-        </div>
-
         <div class="header-rule"></div>
       </header>
 
@@ -392,7 +398,7 @@
           </li>
           <li>
             <span class="label">Frontend:</span> Next.js, React.js, React
-            Router, HTML5, CSS3, Tailwind CSS, Bootstrap, Shadcn UI
+            Router, React Hook Form  HTML5, CSS3, Tailwind CSS, Bootstrap, Shadcn UI
           </li>
           <li>
             <span class="label">Backend:</span> Node.js, Express.js, REST APIs,
@@ -411,14 +417,74 @@
       <section>
         <h2 class="section-heading"><span>Projects</span></h2>
 
+        <!-- Project 1 -->
         <article class="project">
-          <div class="project-header">
-            <span class="project-number">1.</span>
-            <span class="project-title">
-              YourRENT (Property Rental Platform)</span
-            >
+          <div
+            class="project-header"
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+            "
+          >
+            <div>
+              <span class="project-number">1.</span>
+              <span class="project-title"> YourDelivery (Courier Service)</span>
+            </div>
             <span class="project-links">
-              — <a href="https://your-rent.vercel.app">Live Demo</a> |
+              <a href="https://yourdelivery.vercel.app">Live Demo</a> |
+              <a href="https://github.com/abdullahMsiam/your-delivery"
+                >Backend Code</a
+              >
+              |
+              <a href="https://github.com/abdullahMsiam/your-delivery-frontend"
+                >Frontend Code</a
+              >
+            </span>
+          </div>
+
+          <div class="stack">
+            <span class="label">TECH:</span>
+            <span class="stack-items"
+              >Next.js · TypeScript · Express.js · Prisma · Stripe · shadcn/ui · TanStack Query · Zustand · Zod</span
+            >
+          </div>
+
+          <p class="project-description">
+            Full-stack courier platform for booking parcels, tracking deliveries, managing agents, and handling customer payments, with separate customer, agent, and administrator dashboards.
+          </p>
+
+          <ul class="project-points">
+            <li>
+              Enables customers to book parcel deliveries, track shipments in real time, and pay through Stripe Elements.
+            </li>
+            <li>
+              Provides agents with an assigned-deliveries workflow covering status transitions from pickup through final delivery, plus COD payment recording
+            </li>
+            <li>
+              Equips administrators with user management, delivery assignment, and analytics dashboards with CSV export.
+            </li>
+          </ul>
+        </article>
+
+        <!-- Project 2   -->
+        <article class="project">
+          <div
+            class="project-header"
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+            "
+          >
+            <div>
+              <span class="project-number">2.</span>
+              <span class="project-title">
+                YourRENT (Property Rental Platform)</span
+              >
+            </div>
+            <span class="project-links">
+              <a href="https://your-rent.vercel.app">Live Demo</a> |
               <a href="https://github.com/abdullahMsiam/your-rent-bk"
                 >Backend Code</a
               >
@@ -458,55 +524,23 @@
           </ul>
         </article>
 
+        <!-- Project 3 -->
         <article class="project">
-          <div class="project-header">
-            <span class="project-number">2.</span>
-            <span class="project-title"> MASIO (Apps Store)</span>
+          <div
+            class="project-header"
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+            "
+          >
+            <div>
+              <span class="project-number">3.</span>
+              <span class="project-title">
+                Master Chefs (Recipe &amp; Chef Site)</span>
+            </div>
             <span class="project-links">
-              — <a href="https://mas-io-client.vercel.app">Live Demo</a> |
-              <a href="https://github.com/abdullahMsiam/mas-io-client"
-                >Frontend Code</a
-              >
-            </span>
-          </div>
-
-          <div class="stack">
-            <span class="label">TECH:</span>
-            <span class="stack-items"
-              >React.js · Tailwind CSS · React Router · Recharts · React
-              Toastify</span
-            >
-          </div>
-
-          <p class="project-description">
-            A responsive React.js application for discovering trending apps and
-            experiencing a simulated installation workflow.
-          </p>
-
-          <ul class="project-points">
-            <li>
-              Built reusable React components and dynamically rendered app data
-              for responsive application pages.
-            </li>
-            <li>
-              Implemented app discovery features with ratings/downloads and a
-              simulated installation process.
-            </li>
-            <li>
-              Simplified app discovery and the installation journey in a single
-              responsive interface.
-            </li>
-          </ul>
-        </article>
-
-        <article class="project">
-          <div class="project-header">
-            <span class="project-number">3.</span>
-            <span class="project-title">
-              Master Chefs (Recipe &amp; Chef Site)</span
-            >
-            <span class="project-links">
-              — <a href="https://chef-master-e0b16.web.app">Live Demo</a> |
+              <a href="https://chef-master-e0b16.web.app">Live Demo</a> |
               <a href="https://github.com/abdullahMsiam/chef-master-server"
                 >Backend Code</a
               >
@@ -548,31 +582,39 @@
          EDUCATION & TRAINING
          ========================= -->
       <section>
-        <h2 class="section-heading"><span>Education &amp; Training</span></h2>
+        <h2 class="section-heading"><span>Education</span></h2>
 
-        <ol class="education-list">
-          <li>
+        <div >
+          <div>
             <span class="education-title"
               >B.Sc. (Engg.) in Computer Science and Engineering</span
             ><br />
             <span class="education-org"
               >Mawlana Bhashani Science and Technology University, Tangail</span
             >
-          </li>
+          </div>
+          
+        </div>
+      </section>
 
-          <li>
+       <!-- ==================
+      Courses & Certifications 
+      -->
+      <section>
+        <h2 class="section-heading"><span>Courses & Certifications</span></h2>
+
+        <div class="languages">
+          <div>
             <span class="education-title"
-              >Next Level AI-Driven Software Engineering Bootcamp (L-2)</span
+              >Next Level AI-Driven Software Engineering Bootcamp,</span
             ><br />
-            <span class="education-org">Programming Hero</span>
-          </li>
-
-          <li>
-            <span class="education-title">Complete Web Development (L-1)</span
-            ><br />
-            <span class="education-org">Programming Hero</span>
-          </li>
-        </ol>
+            <!-- <span class="education-org">Programming Hero</span> -->
+          </div>
+          <div>
+            <span class="education-title">Complete Web Development</span><br />
+            <!-- <span class="education-org">Programming Hero</span> -->
+          </div>
+        </div>
       </section>
 
       <!-- =========================
@@ -581,15 +623,17 @@
       <section>
         <h2 class="section-heading"><span>Languages</span></h2>
 
-        <div>
+        <div class="languages">
           <div class="language-item">
-            <span class="label">English:</span> Professional Working Proficiency
+            <span class="label">English:</span> Working Proficiency,
+            
           </div>
           <div class="language-item">
-            <span class="label">Bangla:</span> Native
+             <span class="label">Bangla:</span> Native
           </div>
         </div>
       </section>
+
     </main>
   </body>
 </html>
