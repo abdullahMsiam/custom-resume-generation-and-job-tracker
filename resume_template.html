@@ -37,7 +37,7 @@
       }
 
       html {
-        font-size: 10.5pt;
+        font-size: 11pt;
       }
 
       body {
@@ -45,8 +45,8 @@
         padding: 0;
         background: #ffffff;
         color: var(--text);
-        font-family:  'Calibri', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-        font-size: 10.5pt;
+        font-family: Calibri, 'Segoe UI', Candara, sans-serif;
+        font-size: 11pt;
         line-height: 1.34;
         text-align: justify;
       }
@@ -70,7 +70,7 @@
         margin: 0;
         color: #000000;
         font-family: Arial, Helvetica, sans-serif;
-        font-size: 16pt;
+        font-size: 17pt;
         line-height: 1.05;
         font-weight: 700;
         letter-spacing: 0.1px;
@@ -80,7 +80,7 @@
         margin-top: 2px;
         color: var(--accent);
         font-family: Arial, Helvetica, sans-serif;
-        font-size: 13pt;
+        font-size: 15pt;
         line-height: 1.15;
         font-weight: 700;
         letter-spacing: 0.7px;
@@ -90,7 +90,7 @@
       .contact-row {
         margin-top: 1px;
         color: #000000;
-        font-size: 10pt;
+        font-size: 11pt;
         line-height: 1.3;
         white-space: nowrap;
         
@@ -132,7 +132,7 @@
         gap: 8px;
         margin: 0 0 3px;
         color: var(--accent-dark);
-        font-size: 10.7pt;
+        font-size: 13pt;
         line-height: 1.15;
         font-weight: 800;
         letter-spacing: 0.7px;
@@ -157,7 +157,7 @@
       .summary {
         margin: 0;
         text-align: justify;
-        line-height: 1.34;
+        line-height: 1.3;
       }
 
       /* =========================
@@ -195,7 +195,7 @@
 
       .project-header {
         margin: 0;
-        font-size: 11pt;
+        font-size: 12pt;
         line-height: 1.25;
         font-weight: 700;
       }
@@ -209,7 +209,7 @@
       }
 
       .project-links {
-        font-size: 9.5pt;
+        font-size: 11pt;
         font-weight: 700;
         text-align: right;
       }
@@ -244,7 +244,7 @@
         margin-top: 3px;
         margin-bottom: 1px;
         color: #000000;
-        font-size: 9.2pt;
+        font-size: 11pt;
         line-height: 1.25;
       }
 
@@ -276,7 +276,7 @@
       }
 
       .education-org {
-        color: #30343a;
+        color: #000000;
       }
       
 
@@ -290,7 +290,7 @@
 
       @media print {
         body {
-          font-size: 9.8pt;
+          font-size: 11pt;
         }
 
         .resume {
@@ -342,7 +342,7 @@
 
         <!-- Dynamic Position -->
         <div class="position">{{ job_position }}</div>
-        <div style="font-size: 10pt; margin-top: 1px"; font-weight: 900; color: #000000>
+        <div style="font-size: 11pt; margin-top: 1px"; font-weight: 900; color: #000000>
           <span> Tangail, Bangladesh </span>
         </div>
         <div class="contact-row">
@@ -383,6 +383,9 @@
 
         <!-- Dynamic Career Objective -->
         <p class="summary">{{ career_objective }}</p>
+         <!-- <p class="summary">
+          Full Stack Developer with knowledge of React.js, Next.js, TypeScript, Node.js, and PostgreSQL. Built secure applications with REST APIs, authentication, and booking management across multiple projects, simplifying rental and delivery processes. Seeking a Full Stack Developer position at [Company Name] to develop web applications.
+         </p> -->
       </section>
 
       <!-- =========================
@@ -464,6 +467,9 @@
             <li>
               Equips administrators with user management, delivery assignment, and analytics dashboards with CSV export.
             </li>
+            <li>
+              Enforces role-based access at the edge via middleware and JWT-authenticated APIs, with URL-synced filters across all list views.
+            </li>
           </ul>
         </article>
 
@@ -504,28 +510,27 @@
           </div>
 
           <p class="project-description">
-            A full-stack rental management system with secure authentication,
-            property filtering, booking management, and responsive UI.
+            A full-stack rental marketplace featuring a secure, role-based dashboard system, verified property listings, and seamless digital payments via Stripe.
           </p>
 
           <ul class="project-points">
             <li>
-              Implemented JWT authentication with role-based access, property
-              search/filtering, and dynamic booking management.
+              Built a 3-role (Tenant/Landlord/Admin) rental marketplace with JWT auth, route guards, and a complete rental lifecycle (apply - approve - pay - complete) on Next.js 16 App Router.
             </li>
             <li>
-              Resolved Vercel serverless CORS preflight issues and improved API
-              request handling with token validation checks.
+              Integrated Stripe Checkout for digital rent payments with instant verification, plus admin tools for user moderation and category management.
             </li>
             <li>
-              Designed a mobile-responsive interface with custom pagination and
-              state management using Next.js and Tailwind CSS.
+              Delivered a dark-mode, mobile-first UI with debounced property filters, pagination, and a typed service layer reducing redundant API calls.
+            </li>
+            <li>
+              Wrote unit and E2E tests covering auth and deployed on Vercel with 30+ routes live
             </li>
           </ul>
         </article>
 
         <!-- Project 3 -->
-        <article class="project">
+        <!-- <article class="project">
           <div
             class="project-header"
             style="
@@ -575,7 +580,7 @@
             </li>
             <li>Designed a clean, mobile-responsive UI using Bootstrap 5.</li>
           </ul>
-        </article>
+        </article> -->
       </section>
 
       <!-- =========================
@@ -621,9 +626,9 @@
          LANGUAGES
          ========================= -->
       <section>
-        <h2 class="section-heading"><span>Languages</span></h2>
+        <h2 class="section-heading"><span>ADDITIONAL INFORMATION</span></h2>
 
-        <div class="languages">
+        <!-- <div class="languages">
           <div class="language-item">
             <span class="label">English:</span> Working Proficiency,
             
@@ -631,6 +636,33 @@
           <div class="language-item">
              <span class="label">Bangla:</span> Native
           </div>
+        </div> -->
+        <div >
+          <div>
+            <span class="education-title"
+              >Campus Volunteering</span
+            ><br />
+            <span class="education-org"
+              >Supported university events and assisted judges during games and competitions.</span
+            >
+          </div>
+          <div>
+            <span class="education-title"
+              >Event Coordination</span
+            ><br />
+            <span class="education-org"
+              >Facilitated communication among guests, faculty, and organizers at online and offline university events.</span
+            >
+          </div>
+          <div>
+            <span class="education-title"
+              >Languages</span
+            ><br />
+            <span class="education-org"
+              >English (Working Proficiency), Bangla (Native)</span
+            >
+          </div>
+
         </div>
       </section>
 
