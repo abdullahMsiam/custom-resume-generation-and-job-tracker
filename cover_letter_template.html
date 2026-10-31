@@ -1,0 +1,271 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Abdullah Muhammad Siam">
+  <title>Abdullah Muhammad Siam | Cover Letter</title>
+
+  <style>
+    @page {
+      size: A4;
+      margin: 18mm 22mm;
+    }
+
+    :root {
+      --accent: #174a7e;
+      --text: #202124;
+      --muted: #5f6368;
+      --border: #174a7e;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      background: #ffffff;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 10.5pt;
+      line-height: 1.55;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .letter-container {
+      width: 100%;
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    /* HEADER */
+
+    .header {
+      text-align: center;
+      padding-bottom: 13px;
+      margin-bottom: 24px;
+      border-bottom: 2px solid var(--border);
+    }
+
+    .name {
+      margin: 0 0 7px;
+      color: #111827;
+      font-size: 19pt;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      line-height: 1.2;
+    }
+
+    .contact-info {
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 9pt;
+      line-height: 1.5;
+    }
+
+    .contact-info a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .separator {
+      padding: 0 5px;
+      color: #a0a0a0;
+    }
+
+    /* DATE */
+
+    .date {
+      margin-bottom: 20px;
+      color: var(--text);
+    }
+
+    /* RECIPIENT */
+
+    .recipient {
+      margin-bottom: 18px;
+      line-height: 1.45;
+    }
+
+    .recipient strong {
+      color: #111827;
+      font-weight: 700;
+    }
+
+    /* SUBJECT */
+
+    .subject {
+      margin-bottom: 17px;
+      font-weight: 700;
+      color: #111827;
+    }
+
+    /* SALUTATION */
+
+    .salutation {
+      margin-bottom: 13px;
+    }
+
+    /* LETTER BODY */
+
+    .content p {
+      margin: 0 0 13px;
+      text-align: left;
+      orphans: 3;
+      widows: 3;
+    }
+
+    .content p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* CLOSING */
+
+    .closing {
+      margin-top: 22px;
+      line-height: 1.5;
+    }
+
+    .signature {
+      margin-top: 25px;
+      color: #111827;
+      font-weight: 700;
+      font-size: 11pt;
+    }
+
+    /* SCREEN */
+
+    @media screen {
+      body {
+        padding: 30px 20px;
+      }
+
+      .letter-container {
+        max-width: 780px;
+        min-height: 1050px;
+        margin: 0 auto;
+      }
+    }
+
+    /* PRINT / PDF */
+
+    @media print {
+      html,
+      body {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        background: #ffffff;
+      }
+
+      .letter-container {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+      }
+
+      a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+
+      .header,
+      .recipient,
+      .subject,
+      .closing,
+      .signature {
+        break-inside: avoid;
+      }
+
+      .content p {
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="letter-container">
+
+    <!-- HEADER -->
+    <header class="header">
+      <h1 class="name">ABDULLAH MUHAMMAD SIAM</h1>
+
+      <div class="contact-info">
+        Tangail, Bangladesh
+        <span class="separator">|</span>
+        +8801637271447
+        <span class="separator">|</span>
+        <a href="mailto:abdullah.siam.chat@gmail.com">
+          abdullah.siam.chat@gmail.com
+        </a>
+      </div>
+
+      <div class="contact-info">
+        <a href="https://github.com/abdullahMsiam">
+          GitHub
+        </a>
+
+        <span class="separator">|</span>
+
+        <a href="https://www.linkedin.com/in/abdullahmsiam/">
+          LinkedIn
+        </a>
+      </div>
+    </header>
+
+    <!-- DATE -->
+    <div class="date">
+      {{ date }}
+    </div>
+
+    <!-- RECIPIENT -->
+    <section class="recipient">
+      <strong>{{ recipient_name if recipient_name else 'Hiring Manager' }}</strong><br>
+      {{ company_name }}<br>
+      {% if company_location %}
+        {{ company_location }}
+      {% endif %}
+    </section>
+
+    <!-- SUBJECT -->
+    <div class="subject">
+      Re: Application for {{ job_position }}
+    </div>
+
+    <!-- SALUTATION -->
+    <div class="salutation">
+      Dear {{ recipient_name if recipient_name else 'Hiring Manager' }},
+    </div>
+
+    <!-- LETTER CONTENT -->
+    <section class="content">
+
+      {% for paragraph in cover_letter_body.split('\n') %}
+        {% if paragraph.strip() %}
+          <p>{{ paragraph.strip() }}</p>
+        {% endif %}
+      {% endfor %}
+
+    </section>
+
+    <!-- CLOSING -->
+    <div class="closing">
+      Sincerely,
+    </div>
+
+    <div class="signature">
+      Abdullah Muhammad Siam
+    </div>
+
+  </main>
+</body>
+</html>

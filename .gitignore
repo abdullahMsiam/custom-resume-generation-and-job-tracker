@@ -1,4 +1,4 @@
-./.generated_resume
-credentials.json
 .env
-Resume_Career.txt
+credentials.json
+oauth_credentials.json
+token.pickle
