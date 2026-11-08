@@ -1,3 +1,6 @@
+import warnings
+warnings.filterwarnings("ignore", category=FutureWarning)
+
 import os
 from datetime import datetime
 import gspread
@@ -11,8 +14,7 @@ from google.oauth2.credentials import Credentials as UserCredentials
 from google.auth.transport.requests import Request
 import pickle
 from dotenv import load_dotenv
-import warnings
-warnings.filterwarnings("ignore", category=FutureWarning)
+
 load_dotenv()
 
 def get_user_drive_creds():
